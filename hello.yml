@@ -1,9 +1,9 @@
 ---
-- name: say hello world
+- name: say hi world
   hosts: all
   gather_facts: false
   tasks:
-    - name: say hello
+    - name: say hi
       debug:
-        msg: hello world
+        msg: hi world
 ...
