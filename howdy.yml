@@ -1,0 +1,9 @@
+---
+- name: testing from github
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: says howdy
+      debug:
+        msg: howdy
+...
