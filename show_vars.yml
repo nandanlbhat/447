@@ -1,0 +1,14 @@
+---
+- name: show vars precedence
+  hosts: servera.lab.example.com
+  gather_facts: false
+
+  vars files:
+    - my_vars_file.yml
+
+  vars:
+    testvar: "from play vars section"
+
+  roles:
+    - role: student.myrole
+...

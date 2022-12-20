@@ -1,0 +1,23 @@
+---
+- tasks:
+    - name: get the user id
+      command: id
+      register: id_out
+      changed _when: false
+
+    - name: show the user id
+      debug:
+        var: id_out['stdout']
+
+    - name: get the user id with privilege
+      command: id
+      register: id_out
+      changed _when: false
+      become: true
+
+    - name: show the user id
+      debug:
+        var: id_out['stdout']
+  gather_facts: false
+  hosts: north
+  name: display the id

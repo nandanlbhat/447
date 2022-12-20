@@ -1,0 +1,1 @@
+testvar: "from host_vars/servera.lab.example.com/vars.yml"

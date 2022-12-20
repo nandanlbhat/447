@@ -1,9 +1,0 @@
----
-- name: say hello world
-  hosts: all
-  gather_facts: false
-  tasks:
-    - name: say hello
-      debug:
-        msg: hello world
-...

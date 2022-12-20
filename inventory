@@ -1,2 +1,5 @@
+[myservers]
+server[a:f].lab.example. com
+
 [self]
-localhost ansible_connection=local
+localhost ansible connection=local

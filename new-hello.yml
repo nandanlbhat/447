@@ -1,0 +1,13 @@
+---
+- name: say hi
+  hosts: myservers
+  gather_facts: false
+  tasks:
+    - name: say hi
+      debug:
+        msg: the value is {{ mygroupvar }}
+
+    - name: say hello world
+      debug:
+        msg: hello world
+...

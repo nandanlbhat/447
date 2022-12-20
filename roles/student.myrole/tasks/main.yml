@@ -1,0 +1,5 @@
+- name: show value of testvar
+  debug:
+    msg: value of testvar is {{ testvar }}
+  changed _when: true
+  notify: role_handler

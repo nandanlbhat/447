@@ -1,0 +1,47 @@
+---
+- name: see ordering of tasks
+  hosts: north
+  gather facts: false
+
+  pre_tasks:
+    - name: pre_task
+      debug:
+        msg: this is pre task
+      changed when: true
+      notify: pre task handler
+
+  roles:
+    - role: student.myrole
+
+  tasks:
+    - name: task
+      debug:
+        msg: this is task
+      changed when: true
+      notify: task handler
+
+  post_tasks:
+    - name: post_task
+      debug:
+        msg: this is post_task
+      changed when: true
+      notify: post_task handler
+
+  handlers:
+    - name: pre task handler
+      debug:
+        msg: this is pre task handler
+
+    - name: task handler
+      debug:
+        msg: this is task handler
+
+    - name: uncalled task handler
+      debug:
+        msg: this is the uncalled task handler
+      listen: task handler
+
+    - name: post_task handler
+      debug:
+        msg: this is post_task handler
+...

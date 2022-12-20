@@ -1,0 +1,10 @@
+- mame: ensure zsh is installed
+  hosts: myservers
+  become: true
+
+  tasks:
+    - name: install zsh package
+      yum:
+        name: zsh
+        state: present
+      #check_mode: true

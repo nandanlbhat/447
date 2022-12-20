@@ -1,0 +1,14 @@
+---
+- name: stat the /tmp dir
+  hosts: myservers
+  gather_facts: false
+  tasks:
+    - name: show /tmp listing
+      command: ls -ld /tmp
+      register: ls_output
+      changed_when: false
+
+    - name: show stat_output variable
+      debug:
+        var: 1ls_output
+...

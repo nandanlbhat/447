@@ -1,0 +1,30 @@
+myservers:
+  hosts:
+    server[a:f].lab.example.com:
+  vars:
+    mygroupvar: “some group variable value"
+self:
+  hosts:
+    localhost:
+      ansible connection: local
+testgroup:
+  children:
+    west:
+      hosts:
+        servera.lab.example.com:
+          testvar: "from inventory.yml"
+    east:
+      children:
+        southeast:
+          hosts:
+            serverb.lab.example.com:
+        northeast:
+          hosts:
+            serverc.lab.example.com:
+    north:
+      hosts:
+        serverd.lab.example.com:
+    south:
+      hosts:
+        servere.lab.example.com:
+        serverf.lab.example.com:
