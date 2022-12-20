@@ -1,0 +1,26 @@
+- name: try out tags
+  hosts: north
+  become: true
+  gather_facts: false
+  tasks:
+    - name: install zsh
+      yum:
+        name: zsh
+        state: present
+      tags:
+        - installzsh
+        - never
+
+    - name: install tcsh
+      yum:
+        name: tcsh
+        state: present
+      tags:
+        - installtcsh
+        - never
+
+    - name: runs always
+      debug:
+        msg: this task is not affected by tag use
+      tags:
+        - always

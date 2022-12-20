@@ -1,0 +1,15 @@
+[defaults]
+inventory = inventory-dir
+remote_user = devops
+#forks = 3
+callback whitelist = timer, cgroup_perf_recap, profile _tasks, profile_roles
+
+[callback_cgroup_perf_recap]
+control_group = ansible profile
+
+[privilege escalation]
+become = false
+become_method = sudo
+become_user = root
+become_ask_pass = false
+
