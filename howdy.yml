@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: says howdy
+    - name: says hi
       debug:
-        msg: howdy
+        msg: hi
 ...
